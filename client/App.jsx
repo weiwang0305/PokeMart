@@ -1,6 +1,6 @@
 import React from 'react';
-import mainDisplay from './container/main-display.jsx';
-import postDisplay from './container/post-display.jsx';
+import MainDisplay from './container/main-display.jsx';
+import PostDisplay from './container/post-display.jsx';
 
 const App = () => (
   <div id='app'>
@@ -22,10 +22,11 @@ const App = () => (
       </ul>
     </div>
     <div className='main-container'>
-      <mainDisplay />
+      <p>Current Listings:</p>
+      <MainDisplay />
     </div>
     <div className='post-container'>
-      <postDisplay />
+      <PostDisplay />
     </div>
   </div>
 );

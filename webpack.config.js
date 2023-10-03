@@ -31,6 +31,10 @@ module.exports = {
           'sass-loader',
         ],
       },
+      {
+        test: /\.(png|jpg)$/,
+        use: ['url-loader?limit=8192'],
+      },
     ],
   },
   plugins: [

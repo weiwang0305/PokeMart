@@ -1,6 +1,6 @@
 import React from 'react';
 
-const postDisplay = () => (
+const PostDisplay = () => (
   <div>
     <form>
       <input id='new-post' />
@@ -11,4 +11,4 @@ const postDisplay = () => (
   </div>
 );
 
-export default postDisplay;
+export default PostDisplay;

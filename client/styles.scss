@@ -14,3 +14,24 @@ ul {
   display: block;
   padding: 15px 5px;
 }
+
+.main-container {
+  width: 800px;
+  height: 800px;
+}
+#products-container {
+  display: inline-flex;
+  margin: 20px 20px;
+}
+.product-name,
+.product-price,
+.seller-name,
+.seller-listing-date {
+  margin: 0px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  margin-right: 20px;
+}
