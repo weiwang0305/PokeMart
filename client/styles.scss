@@ -1,0 +1,16 @@
+#nav-bar {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#nav-bar li a {
+  display: block;
+  padding: 15px 5px;
+}

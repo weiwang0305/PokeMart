@@ -38,4 +38,10 @@ module.exports = {
       template: path.resolve(__dirname, './index.html'),
     }),
   ],
+  // devServer: {
+  //   statis: {
+  //     publicPath: '/build',
+  //     directory: path.resolve(__dirname, 'build'),
+  //   },
+  // },
 };
