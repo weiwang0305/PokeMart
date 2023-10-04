@@ -18,7 +18,7 @@ const PostDisplay = (props) => {
 
   return (
     <div>
-      <form className='input-box' onSubmit={grabData}>
+      <form className='input-box' method='POST' action='/create'>
         <label>
           Product Name:
           <input id='item-name' />
