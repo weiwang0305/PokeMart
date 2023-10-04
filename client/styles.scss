@@ -16,6 +16,7 @@ ul {
 }
 
 .main-container {
+  background: linear-gradient(90deg, #f0027f, #75489f);
   width: 800px;
   height: 800px;
 }
@@ -40,6 +41,7 @@ img {
   flex-direction: column;
 }
 input {
+  margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 4px;
 }

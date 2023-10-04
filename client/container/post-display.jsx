@@ -18,7 +18,11 @@ const PostDisplay = (props) => {
 
   return (
     <div>
-      <form className='input-box' method='POST' action='/create'>
+      <form
+        className='input-box'
+        method='POST'
+        action='http://localhost:3000/create'
+      >
         <label>
           Product Name:
           <input id='item-name' />

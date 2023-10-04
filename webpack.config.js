@@ -12,7 +12,7 @@ module.exports = {
       publicPath: '/',
     },
     proxy: {
-      '/api': {
+      '/': {
         target: 'http://localhost:3000/',
       },
     },

@@ -2,24 +2,31 @@ const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
 
-const productController = require('./controllers/productController.js');
+const product = require('./models/productModel');
+
+// const productController = require('./controllers/productController.js');
 
 const app = express();
 
-const PORT = 8080;
+const PORT = 3000;
 
-mongoose.connect('mongodb://127.0.0.1:27017/test');
+const mongoURI =
+  process.env.NODE_ENV === 'test'
+    ? 'mongodb://localhost/shopper_world'
+    : 'mongodb://localhost/shopper_world';
+mongoose.connect(mongoURI);
 
 app.use(express.json());
 app.use(express.urlencoded());
 
 app.get('/', (req, res) => {
-  res.send('Hello');
+  console.log('Hello world');
+  console.log(product);
 });
 
-app.post('/create', productController.addProduct, (req, res) => {
-  console.log('Hello world');
-});
+// app.post('/create', productController.addProduct, (req, res) => {
+//   console.log('Hello world');
+// });
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}...`);
