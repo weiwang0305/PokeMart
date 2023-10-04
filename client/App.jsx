@@ -1,24 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import MainDisplay from './container/main-display.jsx';
 import PostDisplay from './container/post-display.jsx';
-let products = [];
+import axios from 'axios';
+
 const App = () => {
-  const emptyState = {
-    productName: '',
-    productPrice: 0,
-    sellerName: '',
-    timePosted: 0,
-    productImg: '',
-  };
-  const [initialState, stateSetter] = useState(emptyState);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    setTimeout(() => {
-      console.log(initialState);
-      products.push(<products state={initialState} />);
-      console.log(products);
-    }, 50);
-  }, [initialState]);
+    fetchDatabase();
+  }, []);
+
+  const fetchDatabase = async () => {
+    const res = await axios.get('http://localhost:8080/all');
+    setProducts(res.data);
+    console.log(res.data);
+  };
 
   return (
     <div id='app'>
@@ -41,14 +37,10 @@ const App = () => {
       </div>
       <div className='main-container'>
         <p>Current Listings:</p>
-        <MainDisplay
-          state={initialState}
-          stateChange={stateSetter}
-          products={products}
-        />
+        <MainDisplay products={products} />
       </div>
       <div className='post-container'>
-        <PostDisplay stateChange={stateSetter} state={initialState} />
+        <PostDisplay products={products} />
       </div>
     </div>
   );

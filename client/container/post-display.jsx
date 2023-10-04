@@ -1,20 +1,20 @@
 import React from 'react';
 
 const PostDisplay = (props) => {
-  const grabData = (event) => {
-    event.preventDefault();
-    const name = document.getElementById('item-name').value;
-    const itemPrice = document.getElementById('item-price').value;
-    const sellerName = document.getElementById('seller-name').value;
-    const productImg = document.getElementById('img-file').value;
-    props.stateChange({
-      productName: name,
-      productPrice: itemPrice,
-      sellerName: sellerName,
-      timePosted: new Date(),
-      productImg: productImg,
-    });
-  };
+  // const grabData = (event) => {
+  //   event.preventDefault();
+  //   const name = document.getElementById('item-name').value;
+  //   const itemPrice = document.getElementById('item-price').value;
+  //   const sellerName = document.getElementById('seller-name').value;
+  //   const productImg = document.getElementById('img-file').value;
+  //   props.stateChange({
+  //     productName: name,
+  //     productPrice: itemPrice,
+  //     sellerName: sellerName,
+  //     timePosted: new Date(),
+  //     productImg: productImg,
+  //   });
+  // };
 
   return (
     <div>
@@ -23,17 +23,17 @@ const PostDisplay = (props) => {
         method='POST'
         action='http://localhost:3000/create'
       >
-        <label>
+        <label for='productname'>
           Product Name:
-          <input id='item-name' />
+          <input name='productname' id='item-name' value='Spine' />
         </label>
-        <label>
+        <label for='itemprice'>
           Item Price:
-          <input id='item-price' />
+          <input name='itemprice' id='item-price' value='50' />
         </label>
-        <label>
+        <label for='sellername'>
           Seller Name:
-          <input id='seller-name' />
+          <input name='sellername' id='seller-name' value='Josh' />
         </label>
         <label>
           Upload your image:

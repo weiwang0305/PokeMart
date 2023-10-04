@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import clothing1 from '../images/clothing1.jpg';
 import clothing2 from '../images/clothing2.jpg';
+import axios from 'axios';
+import Products from '../components/products.jsx';
 
 const MainDisplay = (props) => {
   return (
@@ -20,8 +22,10 @@ const MainDisplay = (props) => {
           <p className='seller-name'>Richard</p>
           <p className='seller-listing-date'>October 2, 2023</p>
         </div>
-        {props.products}
       </div>
+      {props.products.map((product, index) => (
+        <Products product={product} index={index} key={product._id} />
+      ))}
     </div>
   );
 };
