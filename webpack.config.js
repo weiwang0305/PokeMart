@@ -3,6 +3,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './client/index.js',
+  devServer: {
+    host: 'localhost',
+    port: 8080,
+    hot: true,
+    static: {
+      directory: path.resolve(__dirname, 'dist'),
+      publicPath: '/',
+    },
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000/',
+      },
+    },
+  },
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
