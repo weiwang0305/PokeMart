@@ -48,20 +48,32 @@ app.post(
   }
 );
 
+app.post('/delete', productController.deleteProduct, (req, res) => {
+  console.log('deleted');
+});
+
+app.get('/contact', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../contact.html'));
+});
+
+app.get('/remove', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../removelisting.html'));
+});
+
 app.get('/all', productController.getAllProduct, (req, res) => {
   res.status(200).json(res.locals.result);
 });
 
-// app.use((err, req, res, next) => {
-//   const defaultErr = {
-//     log: 'Express error handler caught unknown middleware error',
-//     status: 500,
-//     message: { err: 'An error occurred' },
-//   };
-//   const errorObj = Object.assign(defaultErr, err);
-//   console.log(errorObj.log);
-//   res.status(errorObj.status).send(errorObj.message);
-// });
+app.use((err, req, res, next) => {
+  const defaultErr = {
+    log: 'Express error handler caught unknown middleware error',
+    status: 500,
+    message: { err: 'An error occurred' },
+  };
+  const errorObj = Object.assign(defaultErr, err);
+  console.log(errorObj.log);
+  res.status(errorObj.status).send(errorObj.message);
+});
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}...`);

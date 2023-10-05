@@ -30,4 +30,14 @@ productController.getAllProduct = async (req, res, next) => {
   return next();
 };
 
+productController.deleteProduct = async (req, res, next) => {
+  const pokeName = req.body.poke;
+  console.log(pokeName);
+  const deletedPoke = await Product.findOneAndDelete({
+    productName: req.body.poke,
+  });
+  res.redirect('http://localhost:8080/');
+  return next();
+};
+
 module.exports = productController;

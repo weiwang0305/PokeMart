@@ -17,7 +17,7 @@ const PostDisplay = (props) => {
   // };
 
   return (
-    <div>
+    <div className='form-div'>
       <form
         className='input-box'
         method='POST'
@@ -25,11 +25,11 @@ const PostDisplay = (props) => {
         encType='multipart/form-data'
       >
         <label for='productname'>
-          Product Name:
+          Pokemon Name:
           <input name='productname' id='item-name' />
         </label>
         <label for='itemprice'>
-          Item Price:
+          Pokemon Price:
           <input name='itemprice' id='item-price' />
         </label>
         <label for='sellername'>
@@ -49,6 +49,7 @@ const PostDisplay = (props) => {
           Post
         </button>
       </form>
+      <a href='http://localhost:8080/remove'>Remove Listing</a>
     </div>
   );
 };

@@ -25,17 +25,11 @@ const App = () => {
             <a href='http://localhost:8080/'>Home</a>
           </li>
           <li>
-            <a href='http://localhost:8080/home'>Shop</a>
-          </li>
-          <li>
-            <a href='http://localhost:8080/blog'>Blog</a>
-          </li>
-          <li>
             <a href='http://localhost:8080/contact'>Contact</a>
           </li>
         </ul>
       </div>
-      <p>Current Listings:</p>
+      <p id='currentlisting'>Current Listings:</p>
       <MainDisplay products={products} />
       <div className='post-container'>
         <PostDisplay products={products} />
