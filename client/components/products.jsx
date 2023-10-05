@@ -3,6 +3,7 @@ import React from 'react';
 const Products = ({ product }) => {
   return (
     <div className='product-box'>
+      <img src={`import ${product.createdAt}.png from './images'`} />
       <p className='product-name'>{product.productName}</p>
       <p className='product-price'>{product.productPrice}</p>
       <p className='seller-name'>{product.sellerName}</p>

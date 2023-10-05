@@ -22,6 +22,7 @@ const PostDisplay = (props) => {
         className='input-box'
         method='POST'
         action='http://localhost:3000/create'
+        encType='multipart/form-data'
       >
         <label for='productname'>
           Product Name:

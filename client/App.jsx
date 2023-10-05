@@ -13,7 +13,7 @@ const App = () => {
   const fetchDatabase = async () => {
     const res = await axios.get('http://localhost:8080/all');
     setProducts(res.data);
-    console.log(res.data);
+    // console.log(res.data);
   };
 
   return (

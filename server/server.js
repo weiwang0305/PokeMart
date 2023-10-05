@@ -8,10 +8,10 @@ const multer = require('multer');
 //setting options for multer
 const storage = multer.diskStorage({
   destination: (req, res, cb) => {
-    cb(null, '../client/images');
+    cb(null, '/Users/wei/Documents/solo-project/server/images');
   },
   filename: (req, file, cb) => {
-    console.log(file);
+    // console.log(file);
     cb(null, Date.now() + path.extname(file.originalname));
   },
 });
@@ -32,6 +32,7 @@ mongoose.connect(mongoURI);
 
 app.use(express.json());
 app.use(express.urlencoded());
+app.use(express.static(path.join(__dirname, 'images')));
 
 app.get('/', (req, res) => {
   console.log('Hello world');
@@ -40,30 +41,27 @@ app.get('/', (req, res) => {
 
 app.post(
   '/create',
-  productController.addProduct,
   upload.single('image'),
+  productController.addProduct,
   (req, res) => {
-    console.log('Hello world');
+    // console.log('uploaded successful');
   }
 );
-// app.post('/create', upload.single('image'), (req, res) => {
-//   res.send('Image Uploaded');
-// });
 
 app.get('/all', productController.getAllProduct, (req, res) => {
   res.status(200).json(res.locals.result);
 });
 
-app.use((err, req, res, next) => {
-  const defaultErr = {
-    log: 'Express error handler caught unknown middleware error',
-    status: 500,
-    message: { err: 'An error occurred' },
-  };
-  const errorObj = Object.assign(defaultErr, err);
-  console.log(errorObj.log);
-  res.status(errorObj.status).send(errorObj.message);
-});
+// app.use((err, req, res, next) => {
+//   const defaultErr = {
+//     log: 'Express error handler caught unknown middleware error',
+//     status: 500,
+//     message: { err: 'An error occurred' },
+//   };
+//   const errorObj = Object.assign(defaultErr, err);
+//   console.log(errorObj.log);
+//   res.status(errorObj.status).send(errorObj.message);
+// });
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}...`);

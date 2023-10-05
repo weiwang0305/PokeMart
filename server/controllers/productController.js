@@ -4,12 +4,13 @@ const productController = {};
 
 productController.addProduct = async (req, res, next) => {
   try {
-    console.log(req.body);
+    // console.log(req.body.itemprice);
     const newProduct = await Product.create({
       productName: req.body.productname,
       productPrice: req.body.itemprice,
       sellerName: req.body.sellername,
     });
+    console.log(newProduct);
     return next();
   } catch (err) {
     const error = {
