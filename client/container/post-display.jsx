@@ -25,19 +25,19 @@ const PostDisplay = (props) => {
       >
         <label for='productname'>
           Product Name:
-          <input name='productname' id='item-name' value='Spine' />
+          <input name='productname' id='item-name' />
         </label>
         <label for='itemprice'>
           Item Price:
-          <input name='itemprice' id='item-price' value='50' />
+          <input name='itemprice' id='item-price' />
         </label>
         <label for='sellername'>
           Seller Name:
-          <input name='sellername' id='seller-name' value='Josh' />
+          <input name='sellername' id='seller-name' />
         </label>
-        <label>
+        <label for='image'>
           Upload your image:
-          <input type='file' id='img-file' />
+          <input type='file' id='img-file' name='image' />
         </label>
         <button
           id='add-item'

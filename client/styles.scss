@@ -45,3 +45,8 @@ input {
   margin-left: 10px;
   margin-bottom: 4px;
 }
+.product-box {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 10px 10px;
+}
