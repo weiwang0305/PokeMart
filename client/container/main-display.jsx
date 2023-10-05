@@ -3,7 +3,7 @@ import Products from '../components/products.jsx';
 
 const MainDisplay = (props) => {
   return (
-    <div>
+    <div className='product-container'>
       {props.products.map((product, index) => (
         <Products product={product} index={index} key={product._id} />
       ))}

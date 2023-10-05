@@ -1,8 +1,17 @@
+html {
+  font-family: 'Roboto', sans-serif;
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5bbf58a6-1e85-4cfe-83fd-02df6f482b45/de8nlib-6bed7b3d-3d7e-4763-bb60-18f5ee0127fd.png/v1/fill/w_1024,h_652,q_80,strp/background_prairie_pokemon_screencapture_by_nemotrex_de8nlib-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjUyIiwicGF0aCI6IlwvZlwvNWJiZjU4YTYtMWU4NS00Y2ZlLTgzZmQtMDJkZjZmNDgyYjQ1XC9kZThubGliLTZiZWQ3YjNkLTNkN2UtNDc2My1iYjYwLTE4ZjVlZTAxMjdmZC5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.ZVgNGi61AOkC068E-wphWmAUW8amj0MiJySqDcMCVh8');
+  min-height: 100%;
+  min-width: 100%;
+  background-size: cover;
+}
+
 #nav-bar {
   display: inline-flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 ul {
   list-style-type: none;
@@ -15,15 +24,6 @@ ul {
   padding: 15px 5px;
 }
 
-.main-container {
-  background: linear-gradient(90deg, #f0027f, #75489f);
-  width: 800px;
-  height: 800px;
-}
-#products-container {
-  display: inline-flex;
-  margin: 20px 20px;
-}
 .product-name,
 .product-price,
 .seller-name,
@@ -34,8 +34,8 @@ ul {
 img {
   width: 200px;
   height: 200px;
-  margin-right: 20px;
 }
+
 .input-box {
   display: inline-flex;
   flex-direction: column;
@@ -49,4 +49,15 @@ input {
   display: inline-flex;
   flex-direction: column;
   margin: 10px 10px;
+  background-color: rgb(201, 220, 236);
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.product-container {
+  overflow: scroll;
+  display: inline-flex;
+  max-width: 60%;
+  max-height: 800px;
+  flex-wrap: wrap;
 }

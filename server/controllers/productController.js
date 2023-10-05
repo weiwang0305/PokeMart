@@ -6,11 +6,14 @@ productController.addProduct = async (req, res, next) => {
   try {
     // console.log(req.body.itemprice);
     const newProduct = await Product.create({
+      fileName: req.file.filename,
+      filePath: req.file.path,
       productName: req.body.productname,
       productPrice: req.body.itemprice,
       sellerName: req.body.sellername,
     });
     console.log(newProduct);
+    res.redirect('http://localhost:8080/');
     return next();
   } catch (err) {
     const error = {

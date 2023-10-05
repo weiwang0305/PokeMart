@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <div id='app'>
-      Shopper's World!
+      <h1>Poke Mart</h1>
       <div className='nav-container'>
         <ul id='nav-bar'>
           <li>
@@ -35,10 +35,8 @@ const App = () => {
           </li>
         </ul>
       </div>
-      <div className='main-container'>
-        <p>Current Listings:</p>
-        <MainDisplay products={products} />
-      </div>
+      <p>Current Listings:</p>
+      <MainDisplay products={products} />
       <div className='post-container'>
         <PostDisplay products={products} />
       </div>

@@ -44,7 +44,7 @@ app.post(
   upload.single('image'),
   productController.addProduct,
   (req, res) => {
-    // console.log('uploaded successful');
+    console.log(req.file, req.body);
   }
 );
 
